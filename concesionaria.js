@@ -25,6 +25,13 @@ const concesionaria = {
     autosQuePuedeComprar:function (importe) {
         const enVenta = this.autosEnventa();
         return enVenta.filter(car => car.precio <= importe);
+    },
+    autosNuevos:function (km) {
+        const enVenta = this.autosEnventa();
+        return enVenta.filter(car => car.km <= km);
+    },
+    listaDeVentas:function () {
+        return this.vehiculos.filter(car => car.vendido === true)
     }
 
 }
